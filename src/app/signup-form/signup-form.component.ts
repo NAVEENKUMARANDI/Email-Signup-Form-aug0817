@@ -10,6 +10,8 @@ export class SignupFormComponent implements OnInit {
 
   Salutions: any = ['Mrs.', 'Ms.', 'Miss', 'Dr.', 'Mr.']
 
+  Country: any = ['Abu Dhabi', 'India', 'United State', 'United Kingdom', 'China', 'Japan', 'Singapore']
+
 signupProfileForm = this.fb.group({  
 
   salutions: ['', [Validators.required]],

@@ -54,8 +54,7 @@
         <!-----------------------FIRST NAME-------------------->
 
         <div class="row">
-            <div class="col-sm-1">
-            </div>
+            <div class="col-sm-1"></div>
             <div class="col-sm-3">
                 <br><br>
                 <label for="firstName"> First Name: *</label>
@@ -84,6 +83,7 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-5"></div>
         </div>
 
         <!-----------------------LAST NAME-------------------->
@@ -130,6 +130,7 @@
                 <label for="email"> E-mail: *</label>
                 <input type="text" id="email" formControlName="email" maxlength="20" />
             </div>
+            <div class="col-sm-5"></div>
         </div>
 
         <!-----------------------PHONE-------------------->
@@ -138,11 +139,15 @@
             <div class="col-sm-1">
             </div>
             <div class="col-sm-2">
+
                 <br><br>
                 <label for="phone"> Phone </label>
-                <input type="text" id="phone" formControlName="phone" maxlength="10" />
+                <input type="text" id="areacode" formControlName="areacode" maxlength="3" /> Area Code
+                <input type="text" id="phone" formControlName="phone" maxlength="10" /> Phone Number
+
             </div>
         </div>
+
 
         <!-----------------------ADDRESS-------------------->
 
@@ -175,7 +180,7 @@
                 </select>
             </div>
         </div>
-        
+
         <!----------------SUBMIT------------------>
 
         <div class="row">
@@ -183,7 +188,7 @@
             </div>
             <div class="col-sm-3">
                 <br><br>
-                <button type="submit" [disabled]="!studentProfile.valid">Submit</button>
+                <button type="submit" [disabled]="!signupProfileForm.valid">Submit</button>
             </div>
         </div>
     </div>
