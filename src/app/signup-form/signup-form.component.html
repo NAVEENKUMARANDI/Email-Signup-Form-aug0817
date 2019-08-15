@@ -3,7 +3,7 @@
         <div class="col-sm-1">
         </div>
         <div class="col-sm-6">
-            <h3>EMAIL SIGN UP FORM</h3>
+            <h2>EMAIL SIGN UP FORM</h2>
             <p>We would love to be in touch with you!. Sign up to receive emails from us!</p>
         </div>
     </div>
@@ -157,20 +157,19 @@
             <div class="col-sm-2">
                 <br><br>
                 <label for="streetAddress"> ADDRESS :</label>
-                <input type="text" id="streetAddress" formControlName="streetAddress" /><br>
-                Street Address
+                <input type="text" id="streetAddress" formControlName="streetAddress" />Street Address
 
                 <br><br>
-                <label for="streetAddressLine2"> streetAddressLine2 :</label>
-                <input type="text" id="streetAddressLine2" formControlName="streetAddressLine2" />
+                <input type="text" id="streetAddressLine2" formControlName="streetAddressLine2" />Street Address Line 2
 
                 <br><br>
-                <label for="city"> CITY :</label>
-                <input type="text" id="city" formControlName="city" />
+                <input type="text" id="city" formControlName="city" />City
 
                 <br><br>
-                <label for="state"> STATE :</label>
-                <input type="text" id="state" formControlName="state" />
+                <input type="text" id="state" formControlName="state" />State / Province
+
+                <br><br>
+                <input type="text" id="postal" formControlName="postal" />Postal / Zip Code
 
                 <select formControlName="country">
                     <option value="">Choose your country</option>
@@ -181,15 +180,26 @@
             </div>
         </div>
 
-        <!----------------SUBMIT------------------>
-
+        <br><br>
         <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-1">
             </div>
             <div class="col-sm-3">
-                <br><br>
-                <button type="submit" [disabled]="!signupProfileForm.valid">Submit</button>
+                <label for="comments"> Comments, Questions or Suggestions </label>
+                <textarea ng-model="myTextarea"></textarea>
+                </div>
             </div>
+
+            <!----------------SUBMIT------------------>
+
+            <div class="row">
+                <div class="col-sm-5">
+                </div>
+                <div class="col-sm-2">
+                    <br><br>
+                    <button type="submit" [disabled]="!signupProfileForm.valid">Submit</button>
+                </div>
+            </div>
+            <div class="col-sm-5"></div>
         </div>
-    </div>
 </form>
