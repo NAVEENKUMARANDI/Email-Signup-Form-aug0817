@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-6">
+            <h3>EMAIL SIGN UP FORM</h3>
+            <p>We would love to be in touch with you!. Sign up to receive emails from us!</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-7">
+        <h4> Please complete all information below: </h4>
+    </div>
+    <div class="col-sm-5"></div>
+</div>
+
+<form [formGroup]="signupProfileForm" (ngSubmit)="onSubmit()">
+
+    <!-----------------------SALUTIONS-------------------->
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2">
+
+            <!--            <div *ngIf="salutions.errors?.required">
+                <span style="color:brown" ng-show="studentProfile.required.$error.required"> Please select a Salutions.
+                </span>
+            </div>
+            <div class="col-sm-2"></div> -->
+            
+            <label for="salutions"> Salutations </label>
+            <select formControlName="salutions">
+                <!--   <option value="">Choose your state</option> -->
+                <option *ngFor="let salutions of Salutions" [ngValue]="salutions" (change)="changeSalutions($event)">
+                    {{salutions}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <!-----------------------FIRST NAME-------------------->
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-3">
+            <br><br>
+            <label for="firstName"> First Name: *</label>
+            <input type="text" id="firstName" formControlName="firstName" />
+
+            <div *ngIf="signupProfileForm.invalid" class="alert alert-danger">
+                <div *ngIf="firstName.errors?.lengthValidation">
+                    FirstName is required.
+                </div>
+
+                <div *ngIf="firstName.errors?.minlength">
+                    <span style="color:Red" ng-show="registrationProfile.firstName.$error.firstName"> Length of
+                        FirstName is
+                        lesser
+                        than 5
+                        chars. </span>
+                </div>
+
+                <div *ngIf="firstName.errors?.maxlength">
+                    <span style="color:Red" ng-show="registrationProfile.firstName.$error.firstName"> Length of
+                        FirstName is
+                        more than
+                        10
+                        chars.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------------LAST NAME-------------------->
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-3">
+            <br><br>
+            <label for="lastName"> Last Name: *</label>
+            <input type="text" id="lasttName" formControlName="lastName" />
+
+            <div *ngIf="signupProfileForm.invalid" class="alert alert-danger">
+                <div *ngIf="lastName.errors?.minlength">
+                    <span style="color:blueviolet"> LastName is required. </span>
+                </div>
+
+                <div *ngIf="lastName.errors?.minlength">
+                    <span style="color:Red" ng-show="signupProfileForm.lastName.$error.lastName"> Length of LastName is
+                        lesser than
+                        5
+                        chars.</span>
+                </div>
+
+                <div *ngIf="lastName.errors?.maxlength">
+                    <span style="color:Red" ng-show="signupProfileForm.lastName.$error.lastName"> Length of LastName is
+                        more than
+                        10
+                        chars.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------------E-Mail-------------------->
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-3">
+            <br><br>
+            <label for="email"> E-mail: *</label>
+            <input type="text" id="email" formControlName="email" maxlength="20" />
+        </div>
+    </div>
+
+    <!-----------------------PHONE-------------------->
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2">
+            <br><br>
+            <label for="phone"> Phone </label>
+            <input type="text" id="phone" formControlName="phone" maxlength="10" />
+        </div>
+    </div>
+
+    <!-----------------------ADDRESS-------------------->
+
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2">
+            <br><br>
+            <label for="streetAddress"> ADDRESS :</label>
+            <input type="text" id="streetAddress" formControlName="streetAddress" /><br>
+            Street Address
+
+            <br><br>
+            <label for="streetAddressLine2"> streetAddressLine2 :</label>
+            <input type="text" id="streetAddressLine2" formControlName="streetAddressLine2" />
+
+            <br><br>
+            <label for="city"> CITY :</label>
+            <input type="text" id="city" formControlName="city" />
+
+            <br><br>
+            <label for="state"> STATE :</label>
+            <input type="text" id="state" formControlName="state" />
+
+            <select formControlName="country">
+                <option value="">Choose your country</option>
+                <option *ngFor="let country of Country" [ngValue]="country" (change)="changeCountry($event)">
+                    {{country}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <!----------------SUBMIT------------------>
+
+    <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-3">
+            <br><br>
+            <button type="submit" [disabled]="!studentProfile.valid">Submit</button>
+        </div>
+    </div>
+</form>
