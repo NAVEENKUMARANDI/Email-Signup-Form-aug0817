@@ -18,6 +18,12 @@ signupProfileForm = this.fb.group({
   email: ['', [Validators.required]],
   phone: ['', [Validators.required, Validators.minLength(10)]],
   address: ['',[Validators.required]],
+  streetAddress: ['', [Validators.required]],
+  streetAddressLine2: ['', [Validators.required]],
+  city: ['', [Validators.required]],
+  state: ['', [Validators.required]],
+  postal: ['', [Validators.required]],
+  country: ['', [Validators.required]],
   comments: ['', [Validators.required]]
 });
 
@@ -51,6 +57,24 @@ signupProfileForm = this.fb.group({
   }
   get address(){
     return this.signupProfileForm.get('address');
+  }
+  get streetAddress() {
+    return this.signupProfileForm.get('streetAddress');
+  }
+  get streetAddressLine2() {
+    return this.signupProfileForm.get('streetAddressLine2');
+  }
+  get city() {
+    return this.signupProfileForm.get('city');
+  }
+  get state() {
+    return this.signupProfileForm.get('state');
+  }
+  get postal() {
+    return this.signupProfileForm.get('postal');
+  }
+  get country() {
+    return this.signupProfileForm.get('country');
   }
   get comments() {
     return this.signupProfileForm.get('comments');
