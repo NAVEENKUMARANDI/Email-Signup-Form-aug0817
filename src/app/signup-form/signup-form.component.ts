@@ -30,18 +30,13 @@ signupProfileForm = this.fb.group({
   comments: ['', [Validators.required]]
 });
 
-// addressArrayItems: {
-// streetAddress: string,
-// streetAddressLine2: string,
-// city: string,
-// state: string,
-// postal: number,
-// country: string 
-// }[];
-
   constructor(private  fb: FormBuilder) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.warn(this.signupProfileForm.value);
   }
   get salutions() {
     return this.signupProfileForm.get('salutions');

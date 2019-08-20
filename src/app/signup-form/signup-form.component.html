@@ -75,11 +75,11 @@
 
                 <div *ngIf="signupProfileForm.invalid" class="alert alert-danger">
                     <div *ngIf="firstName.errors?.lengthValidation">
-                        FirstName is required.
+                        <span style="color:blueviolet"> FirstName is required. </span>
                     </div>
 
                     <div *ngIf="firstName.errors?.minlength">
-                        <span style="color:Red" ng-show="registrationProfile.firstName.$error.firstName"> Length of FirstName is lessery than 5 chars. </span>
+                        <span style="color:Red" ng-show="registrationProfile.firstName.$error.firstName"> Length of FirstName is less than 5 chars. </span>
                     </div>
 
                     <div *ngIf="firstName.errors?.maxlength">
@@ -141,7 +141,7 @@
             <div class="col-sm-1"></div>
 
             <div class="col-sm-2">
-                <input type="text" id="email" formControlName="email" maxlength="20" />
+                <input type="text" id="email" formControlName="email" maxlength="30" />
             </div>
 
             <div class="col-sm-5"></div>
