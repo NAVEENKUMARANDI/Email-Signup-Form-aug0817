@@ -20,6 +20,7 @@ signupProfileForm = this.fb.group({
   email: ['', [Validators.required]],
   phone: ['', [Validators.required, Validators.minLength(10)]],
   address: ['',[Validators.required]],
+  areaCode: ['', [Validators.required]],
   streetAddress: ['', [Validators.required]],
   streetAddressLine2: ['', [Validators.required]],
   city: ['', [Validators.required]],
@@ -59,6 +60,9 @@ signupProfileForm = this.fb.group({
   }
   get address(){
     return this.signupProfileForm.get('address');
+  }
+  get areaCode() {
+    return this.signupProfileForm.get('areaCode');
   }
   get streetAddress() {
     return this.signupProfileForm.get('streetAddress');
